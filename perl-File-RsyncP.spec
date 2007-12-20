@@ -12,6 +12,7 @@ Group:		Development/Perl
 Url:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/File/%{module}-%{version}.tar.bz2
 Buildrequires:	perl-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 File::RsyncP is a perl implementation of an Rsync client. It is compatible

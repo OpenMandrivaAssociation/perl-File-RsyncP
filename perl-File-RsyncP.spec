@@ -1,18 +1,18 @@
-%define module	File-RsyncP
-%define name	perl-%{module}
-%define version	0.68
-%define release	%mkrel 4
+%define upstream_name	 File-RsyncP
+%define upstream_version 0.68
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl Rsync client
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/File/%{module}-%{version}.tar.bz2
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/File/%{upstream_name}-%{upstream_version}.tar.bz2
+
 Buildrequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 File::RsyncP is a perl implementation of an Rsync client. It is compatible
@@ -21,7 +21,7 @@ by running rsync on the remote machine, or connecting to an rsyncd daemon on
 the remote machine.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE='%{optflags}'
@@ -42,6 +42,3 @@ rm -rf %{buildroot}
 %doc README
 %{perl_vendorlib}/*
 %{_mandir}/*/*
-
-
-

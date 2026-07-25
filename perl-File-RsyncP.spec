@@ -1,15 +1,15 @@
 %define upstream_name	 File-RsyncP
-%define upstream_version 0.70
+%define upstream_version 0.76
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	4
+Version:    %{upstream_version}
+Release:	1
 
 Summary:	Perl Rsync client
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/File/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/File-RsyncP
+Source0:    https://cpan.metacpan.org/authors/id/C/CB/CBARRATT/File-RsyncP-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 Buildrequires:	perl-devel

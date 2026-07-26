@@ -1,15 +1,13 @@
 %define upstream_name	 File-RsyncP
-%define upstream_version 0.76
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	1
+Version:    0.76
+Release:	2
 
 Summary:	Perl Rsync client
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:        https://metacpan.org/dist/File-RsyncP
-Source0:    https://cpan.metacpan.org/authors/id/C/CB/CBARRATT/File-RsyncP-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/C/CB/CBARRATT/File-RsyncP-%{version}.tar.gz
 
 BuildRequires:	make
 Buildrequires:	perl-devel
@@ -22,7 +20,7 @@ by running rsync on the remote machine, or connecting to an rsyncd daemon on
 the remote machine.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE='%{optflags}'
@@ -60,9 +58,7 @@ rm -rf %{buildroot}
 
 * Mon Aug 03 2009 Jérôme Quelin <jquelin@mandriva.org> 0.680.0-1mdv2010.0
 + Revision: 407748
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.68-4mdv2009.0
+- rebuild using %0.76 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.68-4mdv2009.0
 + Revision: 256997
 - rebuild
 
